@@ -42,7 +42,7 @@ public class RespUtil {
 
     public static RespResult<Void> fail(RespCode source, String message) {
         RespResult<Void> result = new RespResult(source);
-        result.setRespMsg(message);
+        result.setMsg(message);
         return result;
     }
 
@@ -55,12 +55,12 @@ public class RespUtil {
         if (respResult == null) {
             throw new ServiceException(RespSystemCode.SYSTEM_ERROR);
         } else {
-            return RespSystemCode.SUCCESS.getCode().equals(respResult.getRespCode());
+            return RespSystemCode.SUCCESS.getCode().equals(respResult.getCode());
         }
     }
 
     public static boolean isSocketTimeOut(RespResult respResult) {
-        return RespSystemCode.SOCKET_READ_TIMEOUT.getCode().equals(respResult.getRespCode());
+        return RespSystemCode.SOCKET_READ_TIMEOUT.getCode().equals(respResult.getCode());
     }
 
     public static boolean isFailed(RespResult respResult) {
@@ -70,10 +70,10 @@ public class RespUtil {
     public static <T> T getRespResult(RespResult<T> respResult) {
         if (respResult == null) {
             throw new ServiceException(RespSystemCode.SYSTEM_ERROR);
-        } else if (RespSystemCode.SUCCESS.getCode().equals(respResult.getRespCode())) {
+        } else if (RespSystemCode.SUCCESS.getCode().equals(respResult.getCode())) {
             return respResult.getData();
         } else {
-            throw new ServiceException(respResult.getRespCode(), respResult.getRespMsg());
+            throw new ServiceException(respResult.getCode(), respResult.getMsg());
         }
     }
 

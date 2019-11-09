@@ -8,7 +8,7 @@ public enum RespSystemCode implements RespCode {
     /**
      * 成功
      */
-    SUCCESS("00000000", "success"),
+    SUCCESS("0000", "success"),
 
     /**
      * 未知结果
