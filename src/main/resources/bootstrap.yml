@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: bm-oms
+    author: pyx
+    description: 后台管理系统
+
+mybatis.mapperLocations: "classpath*:/orm/*.xml"
+
+#pagehelper分页插件
+pagehelper.helper-dialect: "mysql"
+pagehelper.params: "count=countSql"
+pagehelper.reasonable: false
+pagehelper.support-methods-arguments: true
+mapper.identity: "MYSQL"
+spring.datasource.driver-class-name: "com.mysql.jdbc.Driver"
+spring.datasource.initialSize: 1
+spring.datasource.maxActive: 40
+spring.datasource.maxWait: 2000
+spring.datasource.minIdle: 1
+spring.datasource.type: "com.alibaba.druid.pool.DruidDataSource"
