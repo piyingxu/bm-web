@@ -29,7 +29,7 @@ public class LoginController {
      * 登录请求
      */
     @ApiOperation("1、登录")
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
     @ResponseBody
     public RespResult<LoginResponse> login(String name, String pwd, String code) {
         return loginService.login(name, pwd, code);

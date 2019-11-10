@@ -1,5 +1,5 @@
 layui.config({
-    base: $config.resUrl+'layuicms/common/js/'//定义基目录
+    base: '../../../common/js/'//定义基目录
 }).extend({
     ajaxExtention: 'ajaxExtention',//加载自定义扩展，每个业务js都需要加载这个ajax扩展
     $tool: 'tool',

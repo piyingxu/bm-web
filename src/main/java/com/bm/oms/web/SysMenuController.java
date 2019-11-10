@@ -1,5 +1,6 @@
 package com.bm.oms.web;
 
+import com.bm.oms.config.OmsConfiguration;
 import com.bm.oms.dto.base.RespResult;
 import com.bm.oms.dto.base.RespUtil;
 import com.bm.oms.dto.res.MenuTreeResponse;
@@ -24,34 +25,41 @@ public class SysMenuController {
     private SysMenuService sysMenuService;*/
 
 
-
     @ApiOperation("1、获取角色可见菜单列表")
     @RequestMapping(value = "/menuList.do",method = RequestMethod.GET)
     @ResponseBody
     public RespResult getMenuList() {
+        return RespUtil.success(OmsConfiguration.menuArr);
+    }
+
+
+    @ApiOperation("2、firstClassMenus")
+    @RequestMapping(value = "/firstClassMenus.do",method = RequestMethod.POST)
+    @ResponseBody
+    public RespResult getFirstMenuList() {
         //返回json至前端的均返回ResultBean或者PageResultBean
-        List<MenuTreeResponse> tempArr = new ArrayList<>();
-        MenuTreeResponse obj = new MenuTreeResponse();
+        return RespUtil.success(OmsConfiguration.menuArr);
+    }
+
+    /**
+     * 获取所有菜单列表
+     * @param page 页序
+     * @param limit 分页大小
+     * */
+    @ApiOperation("3、获取所有菜单列表")
+    @RequestMapping(value = "/menuList.do",method = RequestMethod.POST)
+    @ResponseBody
+    public RespResult<List<SysMenuTestExtend>> getMenuList(String page, String limit, String menuName, String menuCode, String parentMenuId){
+        //返回json至前端的均返回ResultBean或者PageResultBean
+        List<SysMenuTestExtend> tempArr = new ArrayList<>();
+        SysMenuTestExtend obj = new SysMenuTestExtend();
         obj.setId("1");
         obj.setTitle("参数配置");
-        obj.setIcon("layui-icon-app");
+        obj.setIcon("icon-test");
         obj.setHref("http");
-        obj.setSpread(false);
-
-        MenuTreeResponse obj1 = new MenuTreeResponse();
-        obj1.setId("2");
-        obj1.setTitle("签到配置");
-        obj1.setIcon("icon-test");
-        obj1.setHref("http");
-        obj1.setSpread(false);
-
-        obj.getChildren().add(obj1);
-
         tempArr.add(obj);
-
-
-
         RespResult rlt = RespUtil.success(tempArr);
+        rlt.setCount(1);
         return rlt;
     }
 
