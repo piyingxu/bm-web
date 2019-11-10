@@ -16,7 +16,7 @@ import java.util.List;
 @RequestMapping("/api/oms")
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-public class ParamController {
+public class CheckInController {
 
     @Resource
     private CheckinInfoMapper checkinInfoMapper;

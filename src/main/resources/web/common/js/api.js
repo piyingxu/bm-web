@@ -87,6 +87,30 @@ layui.define(['$tool','jquery'], function (exports) {
         UpCheckIn:function(req,successCallback,errorCallback) {
             doPost($tool.getContext()+'/api/oms/upCheckIn',req,successCallback,errorCallback);
         },
+        AddBroadcast:function(req,successCallback,errorCallback){
+            doPost($tool.getContext()+'/api/oms/addBroadcast',req,successCallback,errorCallback);
+        },
+        DelBroadcast:function(req,successCallback,errorCallback) {
+            doGet($tool.getContext()+'/api/oms/delBroadcast',req,successCallback,errorCallback);
+        },
+        GetBroadcast:function(req,successCallback,errorCallback) {
+            doGet($tool.getContext()+'/api/oms/getBroadcast',req,successCallback,errorCallback);
+        },
+        UpBroadcast:function(req,successCallback,errorCallback) {
+            doPost($tool.getContext()+'/api/oms/upBroadcast',req,successCallback,errorCallback);
+        },
+        AddLuckBasin:function(req,successCallback,errorCallback){
+            doPost($tool.getContext()+'/api/oms/addLuckBasin',req,successCallback,errorCallback);
+        },
+        DelLuckBasin:function(req,successCallback,errorCallback) {
+            doGet($tool.getContext()+'/api/oms/delLuckBasin',req,successCallback,errorCallback);
+        },
+        GetLuckBasin:function(req,successCallback,errorCallback) {
+            doGet($tool.getContext()+'/api/oms/getLuckBasin',req,successCallback,errorCallback);
+        },
+        UpLuckBasin:function(req,successCallback,errorCallback) {
+            doPost($tool.getContext()+'/api/oms/upLuckBasin',req,successCallback,errorCallback);
+        },
     };
 
 

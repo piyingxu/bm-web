@@ -30,8 +30,8 @@ layui.config({
                   {field: 'hour', title: '小时', width: '10%'}
                 , {field: 'gold', title: '奖励金币', width: '10%'}
                 , {field: 'doubleRate', title: '翻倍比率', width: '10%'}
-                , {field: 'createTime', title: '创建时间', width: '20%'}
-                , {field: 'updateTime', title: '更新时间', width: '20%'}
+                , {field: 'createTime', title: '创建时间', templet:"<div>{{layui.util.toDateString(d.createTime)}}</div>", width: '20%'}
+                , {field: 'updateTime', title: '更新时间', templet:"<div>{{layui.util.toDateString(d.updateTime)}}</div>", width: '20%'}
                 , {fixed: 'right', title: '操作', width: 200, align: 'center', toolbar: '#barDemo'} //这里的toolbar值是模板元素的选择器
             ]]
             , done: function (res, curr) {//请求完毕后的回调

@@ -31,8 +31,8 @@ public class LoginController {
     @ApiOperation("1、登录")
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     @ResponseBody
-    public RespResult<LoginResponse> login(String name, String pwd, String code) {
-        return loginService.login(name, pwd, code);
+    public RespResult<LoginResponse> login(String name, String pwd, String code, HttpServletRequest request) {
+        return loginService.login(name, pwd, code, request);
     }
 
     /**

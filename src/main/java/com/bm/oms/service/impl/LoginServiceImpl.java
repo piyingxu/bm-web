@@ -29,11 +29,11 @@ public class LoginServiceImpl implements LoginService {
     @Autowired
     private SysUserService sysUserService;
 
-    public RespResult<LoginResponse> login(String loginName, String pwd, String code) {
+    public RespResult<LoginResponse> login(String loginName, String pwd, String code, HttpServletRequest request) {
         LoginResponse loginResponse = new LoginResponse();
-        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+        System.out.println(request.getSession().getId());
         //验证验证码
-       /* Object vcode = request.getSession().getAttribute("vcode");
+        /*Object vcode = request.getSession().getAttribute("vcode");
         if (vcode == null || code.equalsIgnoreCase(vcode.toString())) {
             throw new ServiceException(RespOmsCode.VCODE_ERROR);
         }*/
