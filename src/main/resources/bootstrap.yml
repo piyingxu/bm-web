@@ -1,6 +1,6 @@
 spring:
   application:
-    name: bm-oms
+    name: bm-web
     author: pyx
     description: 后台管理系统
 
